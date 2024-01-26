@@ -9,7 +9,7 @@ WHERE release_year BETWEEN 2018 AND 2020;
 
 SELECT name FROM musician WHERE name NOT LIKE '% %';
 
-SELECT name FROM track WHERE name LIKE '%my%';
+SELECT name FROM track WHERE name LIKE '%my%' or name LIKE '%мой%';
 
 SELECT ge.name, COUNT(musician_id) FROM musician_genre mg
 LEFT JOIN genre ge ON mg.genre_id = ge.id
