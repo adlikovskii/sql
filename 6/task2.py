@@ -8,6 +8,3 @@ def publisher_info(name):
         info.add_row(i)
     print(info)
 
-
-def collect_info(publisher):
-    print(publisher)
