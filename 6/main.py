@@ -1,10 +1,12 @@
 import sqlalchemy as sq
+import configparser
 from sqlalchemy.orm import sessionmaker
 from models import create_tables, add_json, Publisher, Shop, Book, Stock, Sale
 from task2 import publisher_info
 
-DSN = 'postgresql://localhost:5432/postgres'
-engine = sq.create_engine(DSN)
+settings = configparser.ConfigParser()
+settings.read('setting.ini')
+engine = sq.create_engine(settings['DEFAULT']['DSN'])
 
 create_tables(engine)
 
